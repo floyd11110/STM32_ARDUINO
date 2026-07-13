@@ -10,45 +10,59 @@ Kung gusto mo ng **Serial Monitor** sa STM32 Blue Pill, o gusto mong mag-upload 
 
 Gagamitin natin ang **USART1** ng STM32 Blue Pill.
 
-| FTDI | STM32 Blue Pill |
-|---|---|
-| TX | PA10 (RX1) |
-| RX | PA9 (TX1) |
-| GND | GND |
+| FTDI | STM32 Blue Pill | Gamit |
+|---|---|---|
+| TX | PA10 (RX1) | Serial data |
+| RX | PA9 (TX1) | Serial data |
+| GND | GND | Common ground |
+| 3.3V / VCC | 3.3V | Optional power lang |
 
 ### Tandaan
 
-Cross connection ito:
+Cross connection ang serial pins:
 
 ```text
-FTDI TX  -> STM32 RX / PA10
-FTDI RX  -> STM32 TX / PA9
-FTDI GND -> STM32 GND
+FTDI TX   -> STM32 RX / PA10
+FTDI RX   -> STM32 TX / PA9
+FTDI GND  -> STM32 GND
+FTDI 3.3V -> STM32 3.3V   (optional power)
 ```
 
 Hindi **TX to TX** at hindi rin **RX to RX**.
 
-## Important bago ikabit
+## Kailan ikakabit ang 3.3V?
 
-- I-set ang FTDI sa **3.3V logic** para safe sa STM32.
-- Kung powered na ang STM32 gamit ang **USB**, **ST-LINK**, o regulated external supply, huwag mo nang ikabit ang VCC ng FTDI.
-- Para sa serial communication, ito lang muna ang kailangan:
+Ikabit lang ito:
 
 ```text
-TX
-RX
-GND
+FTDI 3.3V -> STM32 3.3V
 ```
+
+kapag ang **FTDI mismo ang gagamitin mong power source** ng Blue Pill.
+
+### Important
+
+- Siguraduhing tunay na **3.3V output** ang VCC pin ng FTDI.
+- Huwag ikabit ang FTDI VCC sa **5V pin** ng STM32.
+- Kapag FTDI 3.3V ang nagpapower sa STM32, huwag nang sabayan ng USB, ST-LINK power, o ibang supply.
+- Kapag powered na ang STM32 gamit ang USB, ST-LINK, o regulated supply, huwag nang ikabit ang FTDI 3.3V/VCC.
+- Kahit hindi konektado ang VCC, kailangan pa rin na common ang GND.
 
 ## Para sa Serial Monitor / debugging
 
-Ito ang normal setup kung gusto mo lang mag-print ng readings at debug messages:
+Kung powered na ang STM32 gamit ang USB o ST-LINK, ito lang ang kailangan:
 
 ```text
 FTDI TX  -> PA10
 FTDI RX  -> PA9
 FTDI GND -> GND
 BOOT0    -> 0
+```
+
+Kung FTDI ang magpapower sa board, idagdag:
+
+```text
+FTDI 3.3V -> STM32 3.3V
 ```
 
 ### Sample code
@@ -82,6 +96,14 @@ FTDI RX  -> PA9
 FTDI GND -> GND
 ```
 
+Optional power:
+
+```text
+FTDI 3.3V -> STM32 3.3V
+```
+
+Huwag na itong ikabit kapag may ibang power source na ang STM32.
+
 ### Boot setting
 
 Bago mag-upload:
@@ -103,7 +125,7 @@ Kapag successful na ang upload:
 
 1. Ibalik ang **BOOT0 sa 0**.
 2. Pindutin ulit ang **RESET**.
-3.ok na.
+3. Okay na, tatakbo na ang program natin.
 
 ## Kapag walang lumalabas sa Serial Monitor
 
@@ -115,6 +137,7 @@ Check muna ito:
 - common ba ang GND
 - `Serial1` ba ang gamit sa code
 - naka-3.3V logic ba ang FTDI
+- may stable power ba ang STM32
 
 ## Kapag upload failed
 
@@ -126,19 +149,29 @@ Check muna ito:
 - tama ba ang upload method
 - may ibang app bang gumagamit ng COM port
 - maayos ba ang TX, RX, at GND wiring
+- kung FTDI ang power source, nakakabit ba ang **3.3V to 3.3V**
 
 ## Mabilis na summary
 
-Kung Serial Monitor/debug lang:
+Kapag may sariling power na ang STM32:
 
 ```text
-BOOT0 = 0
 FTDI TX  -> PA10
 FTDI RX  -> PA9
 FTDI GND -> GND
+FTDI VCC -> huwag ikabit
 ```
 
-Kung upload gamit ang UART bootloader:
+Kapag FTDI ang magpapower sa STM32:
+
+```text
+FTDI TX   -> PA10
+FTDI RX   -> PA9
+FTDI GND  -> GND
+FTDI 3.3V -> STM32 3.3V
+```
+
+Para sa UART upload:
 
 ```text
 BOOT0 = 1
@@ -157,6 +190,7 @@ Kapag ayaw gumana, ito agad ang unang tingnan natin:
 - baliktad ba ang TX at RX
 - common ba ang GND
 - tama ba ang COM port at baud rate
-- naka-3.3V ba ang FTDI
+- 3.3V ba talaga ang FTDI
+- isa lang ba ang nagpapower sa STM32
 
 Simple lang ang setup, pero dito madalas nanggagaling ang problema kapag walang serial output o ayaw mag-upload.
