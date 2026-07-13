@@ -2,26 +2,28 @@
 
 STM32CubeProgrammer is used by the STM32 Arduino Core when uploading firmware to supported STM32 boards.
 
-## Current installation path
+## Typical Windows installation path
 
 ```text
-D:\Apps\STM32CubeProgrammer
+C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeProgrammer
 ```
 
 Required command-line executable:
 
 ```text
-D:\Apps\STM32CubeProgrammer\bin\STM32_Programmer_CLI.exe
+C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeProgrammer\bin\STM32_Programmer_CLI.exe
 ```
 
-## Setup note
+## PATH setup
 
-Add the following folder to the Windows `PATH` environment variable when Arduino IDE cannot find STM32CubeProgrammer:
+If Arduino IDE cannot find STM32CubeProgrammer, add this folder to the Windows `PATH` environment variable:
 
 ```text
-D:\Apps\STM32CubeProgrammer\bin
+C:\Program Files\STMicroelectronics\STM32Cube\STM32CubeProgrammer\bin
 ```
 
-Download STM32CubeProgrammer only from the official STMicroelectronics website.
+The actual installation folder may differ if a custom location was selected during installation.
 
-Do not commit the official installer ZIP directly to this public repository unless its license explicitly permits redistribution.
+## Installer file
+
+The STM32CubeProgrammer installer or ZIP is not included in this repository. Upload the installer manually only if redistribution is permitted by its license. Otherwise, download it from the official STMicroelectronics website.
