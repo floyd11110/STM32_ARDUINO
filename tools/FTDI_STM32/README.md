@@ -103,7 +103,7 @@ Kapag successful na ang upload:
 
 1. Ibalik ang **BOOT0 sa 0**.
 2. Pindutin ulit ang **RESET**.
-3. Tatakbo na ang program natin.
+3.ok na.
 
 ## Kapag walang lumalabas sa Serial Monitor
 
