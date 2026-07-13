@@ -10,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-  // The Blue Pill onboard LED on PC13 is usually active-low.
+  
   digitalWrite(LED_BUILTIN, LOW);
   delay(500);
 
