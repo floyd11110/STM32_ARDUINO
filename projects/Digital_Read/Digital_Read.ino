@@ -1,13 +1,6 @@
 // STM32 Blue Pill Digital Read example
 // Arduino IDE + STM32 Arduino Core
-//
-// Circuit:
-// PA0  ---- Push button ---- GND
-// PC13 ---- Onboard LED
-//
-// This uses the internal pull-up resistor.
-// Button released = HIGH
-// Button pressed  = LOW
+
 
 #define BUTTON_PIN PA0
 #define LED_PIN    PC13
@@ -17,7 +10,7 @@ void setup() {
   pinMode(LED_PIN, OUTPUT);
 
  
-  digitalWrite(LED_PIN, HIGH); // LED OFF at startup
+  digitalWrite(LED_PIN, HIGH);
 }
 
 void loop() {
