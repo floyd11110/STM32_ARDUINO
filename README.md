@@ -7,8 +7,12 @@ A collection of STM32 projects developed using the Arduino IDE and STM32 Arduino
 ```text
 STM32_ARDUINO/
 ├── projects/
-│   └── LED_Blink/
-│       └── LED_Blink.ino
+│   ├── LED_Blink/
+│   │   └── LED_Blink.ino
+│   └── Digital_Read/
+│       ├── Digital_Read.ino
+│       ├── README.md
+│       └── circuit_diagram.svg
 ├── tools/
 │   ├── STM32CubeProgrammer/
 │   │   └── README.md
@@ -31,6 +35,17 @@ STM32_ARDUINO/
 ### LED Blink
 
 Basic onboard LED test for an STM32 Blue Pill using Arduino IDE.
+
+### Digital Read
+
+Basic push button input tutorial using `digitalRead()` on STM32 Blue Pill.
+
+- Input pin: PA0
+- Output pin: PC13 onboard LED
+- Button wiring: PA0 to push button to GND
+- Uses internal pull-up resistor
+
+[Open the Digital Read project](projects/Digital_Read/README.md)
 
 ## Tools and setup guides
 
