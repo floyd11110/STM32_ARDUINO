@@ -16,7 +16,7 @@ void setup() {
   pinMode(BUTTON_PIN, INPUT_PULLUP);
   pinMode(LED_PIN, OUTPUT);
 
-  // Blue Pill onboard LED on PC13 is usually active LOW.
+ 
   digitalWrite(LED_PIN, HIGH); // LED OFF at startup
 }
 
@@ -24,12 +24,12 @@ void loop() {
   int buttonState = digitalRead(BUTTON_PIN);
 
   if (buttonState == LOW) {
-    // Button pressed
-    digitalWrite(LED_PIN, LOW);   // LED ON
+    
+    digitalWrite(LED_PIN, LOW);   
   } else {
-    // Button released
-    digitalWrite(LED_PIN, HIGH);  // LED OFF
+    
+    digitalWrite(LED_PIN, HIGH);
   }
 
-  delay(20); // small debounce/stability delay
+  delay(20); 
 }
