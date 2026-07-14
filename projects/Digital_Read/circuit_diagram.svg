@@ -1,0 +1,57 @@
+<svg width="1200" height="700" viewBox="0 0 1200 700" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="700" fill="#0b1220"/>
+
+  <text x="600" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="38" font-weight="700" fill="#ffffff">STM32 Blue Pill Digital Read Circuit</text>
+  <text x="600" y="100" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#93c5fd">PA0 reads push button input using internal pull-up resistor</text>
+
+  <!-- STM32 board -->
+  <rect x="110" y="170" width="410" height="360" rx="22" fill="#123b6d" stroke="#60a5fa" stroke-width="4"/>
+  <text x="315" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#ffffff">STM32 BLUE PILL</text>
+  <text x="315" y="255" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#bfdbfe">Arduino IDE + STM32 Core</text>
+
+  <!-- Pins -->
+  <rect x="465" y="300" width="90" height="46" rx="6" fill="#1e293b" stroke="#facc15" stroke-width="3"/>
+  <text x="510" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#facc15">PA0</text>
+
+  <rect x="465" y="410" width="90" height="46" rx="6" fill="#1e293b" stroke="#22c55e" stroke-width="3"/>
+  <text x="510" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#22c55e">GND</text>
+
+  <rect x="195" y="410" width="100" height="46" rx="6" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+  <text x="245" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" font-weight="700" fill="#38bdf8">PC13</text>
+
+  <!-- Onboard LED -->
+  <circle cx="245" cy="340" r="38" fill="#111827" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="245" cy="340" r="20" fill="#ef4444"/>
+  <text x="245" y="395" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#e5e7eb">Onboard LED</text>
+  <line x1="245" y1="410" x2="245" y2="380" stroke="#38bdf8" stroke-width="4"/>
+
+  <!-- Button -->
+  <rect x="760" y="270" width="190" height="120" rx="16" fill="#1f2937" stroke="#f97316" stroke-width="4"/>
+  <circle cx="855" cy="330" r="34" fill="#374151" stroke="#facc15" stroke-width="4"/>
+  <text x="855" y="435" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#ffffff">PUSH BUTTON</text>
+
+  <!-- Wires -->
+  <path d="M555 323 H760" stroke="#facc15" stroke-width="6" fill="none"/>
+  <text x="650" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#fde68a">Button signal</text>
+
+  <path d="M950 330 H1010 V433 H555" stroke="#22c55e" stroke-width="6" fill="none"/>
+  <text x="900" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#bbf7d0">Button to GND</text>
+
+  <!-- Internal Pull-up explanation -->
+  <rect x="635" y="175" width="455" height="70" rx="12" fill="#111827" stroke="#60a5fa" stroke-width="2"/>
+  <text x="862" y="205" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#ffffff">Internal Pull-up Enabled</text>
+  <text x="862" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#bfdbfe">pinMode(PA0, INPUT_PULLUP)</text>
+
+  <!-- Logic table -->
+  <rect x="650" y="510" width="420" height="120" rx="14" fill="#111827" stroke="#94a3b8" stroke-width="2"/>
+  <text x="860" y="545" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#ffffff">Button Logic</text>
+  <text x="705" y="585" font-family="Arial, sans-serif" font-size="20" fill="#e5e7eb">Released:</text>
+  <text x="850" y="585" font-family="Arial, sans-serif" font-size="20" fill="#22c55e">PA0 = HIGH</text>
+  <text x="965" y="585" font-family="Arial, sans-serif" font-size="20" fill="#e5e7eb">LED OFF</text>
+  <text x="705" y="615" font-family="Arial, sans-serif" font-size="20" fill="#e5e7eb">Pressed:</text>
+  <text x="850" y="615" font-family="Arial, sans-serif" font-size="20" fill="#ef4444">PA0 = LOW</text>
+  <text x="965" y="615" font-family="Arial, sans-serif" font-size="20" fill="#e5e7eb">LED ON</text>
+
+  <!-- Safety note -->
+  <text x="600" y="670" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#fca5a5">Note: STM32 GPIO is 3.3V logic. Do not connect 5V signal directly to PA0.</text>
+</svg>
