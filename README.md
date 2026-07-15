@@ -13,6 +13,15 @@ STM32_ARDUINO/
 │       ├── Digital_Read.ino
 │       ├── README.md
 │       └── circuit_diagram.svg
+├── libraries/
+│   └── GY87_MPU6050/
+│       ├── src/
+│       │   ├── GY87_MPU6050.h
+│       │   └── GY87_MPU6050.cpp
+│       ├── examples/
+│       │   └── BasicRead/
+│       │       └── BasicRead.ino
+│       └── README.md
 ├── tools/
 │   ├── STM32CubeProgrammer/
 │   │   └── README.md
@@ -46,6 +55,22 @@ Basic push button input tutorial using `digitalRead()` on STM32 Blue Pill.
 - Uses internal pull-up resistor
 
 [Open the Digital Read project](projects/Digital_Read/README.md)
+
+## Libraries
+
+### GY87_MPU6050
+
+Simple Arduino-style library for reading the MPU6050 part of the GY-87 10DOF IMU module.
+
+Features:
+
+- raw accelerometer and gyroscope reading
+- gyro calibration
+- acceleration in `g`
+- angular velocity in `deg/s`
+- basic roll and pitch angle calculation
+
+[Open the GY87_MPU6050 library](libraries/GY87_MPU6050/README.md)
 
 ## Tools and setup guides
 
