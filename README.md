@@ -15,6 +15,7 @@ STM32_ARDUINO/
 │       └── circuit_diagram.svg
 ├── libraries/
 │   └── GY87_MPU6050/
+│       ├── library.properties
 │       ├── src/
 │       │   ├── GY87_MPU6050.h
 │       │   └── GY87_MPU6050.cpp
@@ -69,6 +70,46 @@ Features:
 - acceleration in `g`
 - angular velocity in `deg/s`
 - basic roll and pitch angle calculation
+
+Required Arduino library files are included:
+
+```text
+libraries/GY87_MPU6050/library.properties
+libraries/GY87_MPU6050/src/GY87_MPU6050.h
+libraries/GY87_MPU6050/src/GY87_MPU6050.cpp
+libraries/GY87_MPU6050/examples/BasicRead/BasicRead.ino
+```
+
+### How to install the GY87_MPU6050 library
+
+1. Download this repository as ZIP.
+2. Extract the ZIP file.
+3. Open this folder:
+
+```text
+STM32_ARDUINO-main/libraries/
+```
+
+4. Copy this folder only:
+
+```text
+GY87_MPU6050
+```
+
+5. Paste it into your Arduino libraries folder:
+
+```text
+Documents/Arduino/libraries/GY87_MPU6050
+```
+
+6. Restart Arduino IDE.
+7. Open:
+
+```text
+File > Examples > GY87_MPU6050 > BasicRead
+```
+
+Do not install the full `STM32_ARDUINO-main.zip` using `Add .ZIP Library`. The full repository ZIP is not a direct Arduino library ZIP.
 
 [Open the GY87_MPU6050 library](libraries/GY87_MPU6050/README.md)
 
