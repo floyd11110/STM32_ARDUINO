@@ -9,8 +9,12 @@ STM32_ARDUINO/
 ├── projects/
 │   ├── LED_Blink/
 │   │   └── LED_Blink.ino
-│   └── Digital_Read/
-│       ├── Digital_Read.ino
+│   ├── Digital_Read/
+│   │   ├── Digital_Read.ino
+│   │   ├── README.md
+│   │   └── circuit_diagram.svg
+│   └── Analog_Write/
+│       ├── Analog_Write.ino
 │       ├── README.md
 │       └── circuit_diagram.svg
 ├── libraries/
@@ -56,6 +60,18 @@ Basic push button input tutorial using `digitalRead()` on STM32 Blue Pill.
 - Uses internal pull-up resistor
 
 [Open the Digital Read project](projects/Digital_Read/README.md)
+
+### Analog Write (PWM)
+
+Basic LED brightness control tutorial using `analogWrite()` PWM on STM32 Blue Pill.
+
+- PWM output pin: PA6 / TIM3 Channel 1
+- Output device: External LED
+- LED resistor: 220 Ω to 330 Ω
+- PWM range used: 0 to 255
+- Example behavior: Smooth fade from OFF to full brightness and back to OFF
+
+[Open the Analog Write project](projects/Analog_Write/README.md)
 
 ## Libraries
 
