@@ -17,16 +17,6 @@ STM32_ARDUINO/
 │       ├── Analog_Write.ino
 │       ├── README.md
 │       └── circuit_diagram.svg
-├── libraries/
-│   └── GY87_MPU6050/
-│       ├── library.properties
-│       ├── src/
-│       │   ├── GY87_MPU6050.h
-│       │   └── GY87_MPU6050.cpp
-│       ├── examples/
-│       │   └── BasicRead/
-│       │       └── BasicRead.ino
-│       └── README.md
 ├── tools/
 │   ├── STM32CubeProgrammer/
 │   │   └── README.md
@@ -72,62 +62,6 @@ Basic LED brightness control tutorial using `analogWrite()` PWM on STM32 Blue Pi
 - Example behavior: Smooth fade from OFF to full brightness and back to OFF
 
 [Open the Analog Write project](projects/Analog_Write/README.md)
-
-## Libraries
-
-### GY87_MPU6050
-
-Simple Arduino-style library for reading the MPU6050 part of the GY-87 10DOF IMU module.
-
-Features:
-
-- raw accelerometer and gyroscope reading
-- gyro calibration
-- acceleration in `g`
-- angular velocity in `deg/s`
-- basic roll and pitch angle calculation
-
-Required Arduino library files are included:
-
-```text
-libraries/GY87_MPU6050/library.properties
-libraries/GY87_MPU6050/src/GY87_MPU6050.h
-libraries/GY87_MPU6050/src/GY87_MPU6050.cpp
-libraries/GY87_MPU6050/examples/BasicRead/BasicRead.ino
-```
-
-### How to install the GY87_MPU6050 library
-
-1. Download this repository as ZIP.
-2. Extract the ZIP file.
-3. Open this folder:
-
-```text
-STM32_ARDUINO-main/libraries/
-```
-
-4. Copy this folder only:
-
-```text
-GY87_MPU6050
-```
-
-5. Paste it into your Arduino libraries folder:
-
-```text
-Documents/Arduino/libraries/GY87_MPU6050
-```
-
-6. Restart Arduino IDE.
-7. Open:
-
-```text
-File > Examples > GY87_MPU6050 > BasicRead
-```
-
-Do not install the full `STM32_ARDUINO-main.zip` using `Add .ZIP Library`. The full repository ZIP is not a direct Arduino library ZIP.
-
-[Open the GY87_MPU6050 library](libraries/GY87_MPU6050/README.md)
 
 ## Tools and setup guides
 
